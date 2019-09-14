@@ -3,6 +3,7 @@ namespace GoogleVR.HelloVR
 {
     using UnityEngine;
     using UnityEngine.EventSystems;
+	using UnityEngine.UI;
 
     /// <summary>Controls interactable teleporting objects in the Demo scene.</summary>
     [RequireComponent(typeof(Collider))]
@@ -61,7 +62,6 @@ namespace GoogleVR.HelloVR
             }
 			
 			foreach (Transform childContainer in transform) {
-				
 				GameObject child = childContainer.gameObject;
 				child.SetActive(!child.active);
 			}
@@ -74,9 +74,21 @@ namespace GoogleVR.HelloVR
             myRenderer = GetComponent<Renderer>();
             SetGazedAt(false);
 			
-			foreach (Transform child in transform) {
-				child.gameObject.SetActive(false);
-			}
+			this.setChildActive(false);
+			
         }
+		
+		private void setChildActive(bool active) {
+			foreach (Transform child in transform) {
+				child.gameObject.SetActive(active);
+			}
+		}
+		
+		private void setChildTextMessage(string message) {
+			foreach (Transform child in transform) {
+				Text oldText = child.GetComponentInChildren<Text>();
+				oldText.text = message;
+			}
+		}
     }
 }

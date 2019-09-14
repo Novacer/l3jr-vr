@@ -399,9 +399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Burger King - Rating 2.2 stars
-
-    $'
+  m_Text: "Burger King - 3.2 stars\n\t$"
 --- !u!222 &297186217
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -680,7 +678,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mr Sushi - Rating 3.8 stars
+  m_Text: 'Mr Sushi - 4.1 stars
 
     $$'
 --- !u!222 &789167103
@@ -955,7 +953,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 955127921}
+        - m_Target: {fileID: 857728119}
           m_MethodName: SetGazedAt
           m_Mode: 6
           m_Arguments:
@@ -1054,8 +1052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d9412aff759420192d8dcf33f969bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inactiveMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
-  gazedAtMaterial: {fileID: 2100000, guid: 0edec395166a3244592f3532c7ce794c, type: 2}
+  inactiveMaterial: {fileID: 2100000, guid: 0edec395166a3244592f3532c7ce794c, type: 2}
+  gazedAtMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
 --- !u!64 &857728120
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1397,8 +1395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d9412aff759420192d8dcf33f969bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inactiveMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
-  gazedAtMaterial: {fileID: 2100000, guid: 0edec395166a3244592f3532c7ce794c, type: 2}
+  inactiveMaterial: {fileID: 2100000, guid: 0edec395166a3244592f3532c7ce794c, type: 2}
+  gazedAtMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
 --- !u!114 &955127923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2025,9 +2023,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mel''s Diner - Rating 4.2 stars
-
-    $$$'
+  m_Text: "Mel's Diner - 4.1 stars (Closes 23:00)\nNo delivery, good for groups \n\t$"
 --- !u!222 &1400841425
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2371,7 +2367,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 955127921}
+        - m_Target: {fileID: 1871252607}
           m_MethodName: SetGazedAt
           m_Mode: 6
           m_Arguments:
@@ -2470,8 +2466,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d9412aff759420192d8dcf33f969bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inactiveMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
-  gazedAtMaterial: {fileID: 2100000, guid: 0edec395166a3244592f3532c7ce794c, type: 2}
+  inactiveMaterial: {fileID: 2100000, guid: 0edec395166a3244592f3532c7ce794c, type: 2}
+  gazedAtMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
 --- !u!64 &1871252608
 MeshCollider:
   m_ObjectHideFlags: 0
