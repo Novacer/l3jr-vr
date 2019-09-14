@@ -18,7 +18,6 @@ namespace GoogleVR.HelloVR
 
         private Vector3 startingPosition;
         private Renderer myRenderer;
-		private Renderer[] listOfChildren;
 
         /// <summary>Sets this instance's GazedAt state.</summary>
         /// <param name="gazedAt">
@@ -48,7 +47,7 @@ namespace GoogleVR.HelloVR
 
         /// <summary>Open/Close the description box for a point of interest.</summary>
         /// <param name="eventData">The pointer click event which triggered this call.</param>
-        public void TogglePoiDescription(BaseEventData eventData)
+        public void TeleportRandomly(BaseEventData eventData)
         {
             // Only trigger on left input button, which maps to
             // Daydream controller TouchPadButton and Trigger buttons.
