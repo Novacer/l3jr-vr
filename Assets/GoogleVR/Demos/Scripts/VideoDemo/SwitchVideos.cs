@@ -66,12 +66,6 @@ namespace GoogleVR.VideoDemo
             SceneManager.LoadScene("Communitech");
         }
 
-        /// <summary>Called on the 360 Video event.</summary>
-        public void On360Video()
-        {
-            SceneManager.LoadScene("HelloVR");
-        }
-
         private void ShowSample(int index)
         {
         }

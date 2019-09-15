@@ -1,15 +1,14 @@
 
-namespace GoogleVR.HelloVR
+namespace GoogleVR.GoBack
 {
     using UnityEngine;
     using UnityEngine.EventSystems;
 	using UnityEngine.UI;
-	using UnityEngine.Networking;
-	using System.Collections;
+	using UnityEngine.SceneManagement;
 
     /// <summary>Controls interactable teleporting objects in the Demo scene.</summary>
     [RequireComponent(typeof(Collider))]
-    public class ObjectController : MonoBehaviour
+    public class GoBackController: MonoBehaviour
     {
         /// <summary>
         /// The material to use when this object is inactive (not being gazed at).
@@ -34,21 +33,8 @@ namespace GoogleVR.HelloVR
                 return;
             }
         }
-
-        /// <summary>Calls the Recenter event.</summary>
-        public void Recenter()
-        {
-#if !UNITY_EDITOR
-            GvrCardboardHelpers.Recenter();
-#else
-            if (GvrEditorEmulator.Instance != null)
-            {
-                GvrEditorEmulator.Instance.Recenter();
-            }
-#endif  // !UNITY_EDITOR
-        }
-
-        /// <summary>Open/Close the description box for a point of interest.</summary>
+		
+		/// <summary>Open/Close the description box for a point of interest.</summary>
         /// <param name="eventData">The pointer click event which triggered this call.</param>
         public void TeleportRandomly(BaseEventData eventData)
         {
@@ -62,18 +48,22 @@ namespace GoogleVR.HelloVR
                     return;
                 }
             }
-			
-			try {
-				StartCoroutine(GetRequest("http://35.239.193.71/get"));
-			} catch {
-				// Do nothing
-			}
-			
-			foreach (Transform childContainer in transform) {
-				GameObject child = childContainer.gameObject;
-				child.SetActive(!child.active);
-			}
 		
+        }
+
+        /// <summary>Calls the Recenter event.</summary>
+        public void Recenter()
+        {
+#if !UNITY_EDITOR
+            GvrCardboardHelpers.Recenter();
+#else
+            if (GvrEditorEmulator.Instance != null)
+            {
+                GvrEditorEmulator.Instance.Recenter();
+            }
+#endif  // !UNITY_EDITOR
+
+			SceneManager.LoadScene("VideoDemo");
         }
 
         private void Start()
@@ -81,9 +71,7 @@ namespace GoogleVR.HelloVR
             startingPosition = transform.localPosition;
             myRenderer = GetComponent<Renderer>();
             SetGazedAt(false);
-			
-			this.setChildActive(false);
-			
+						
         }
 		
 		private void setChildActive(bool active) {
@@ -98,11 +86,5 @@ namespace GoogleVR.HelloVR
 				oldText.text = message;
 			}
 		}
-		
-		private IEnumerator GetRequest(string url) {
-			using (UnityWebRequest webRequest = UnityWebRequest.Get(url)) {
-				yield return webRequest.SendWebRequest();
-			}
-		}	
     }
 }
